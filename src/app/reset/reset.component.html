@@ -1,0 +1,93 @@
+<main>
+    <section class="section section-shaped">
+      <div class="shape shape-style-1 bg-gradient-default">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="container pt-lg-md">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="card bg-secondary shadow border-0">
+            
+              <div class="card-body px-lg-5 py-lg-5">
+                <div class="text-center text-muted mb-4">
+                  <small>Reset password for this email <br /> {{email}}</small>
+                </div>
+                <form [formGroup]="resetForm">
+                  <div class="form-group">
+                    <div class="invalid-form-error" *ngIf="error" >{{ error }}</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-key"></i></span>
+                      </div>
+                      <!-- <input class="form-control" placeholder="Enter OTP" formControlName="otp" type="number" (focus)="focus=true" (blur)="focus=false"> -->
+                      <input class="form-control otp-text" type="text" placeholder="Enter OTP" maxlength="6"  formControlName="otp"  id="pin" pattern="\d{6}" (focus)="focus=true" (blur)="focus=false">
+                      <div *ngIf="submitted && f.otp.errors" class="invalid-form-error">
+                        <div *ngIf="f.otp.errors.required">OTP is required</div>
+                    </div>
+                      
+                    </div>
+                  </div>
+                  <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                      </div>
+                      <input class="form-control" placeholder="New Password" formControlName="password" type="password" (focus)="focus1=true" (blur)="focus1=false">
+                      
+                      <div *ngIf="submitted && f.password.errors" class="invalid-form-error">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password required minimum length is 4.</div>
+                        <div *ngIf="f.password.errors.maxlength">Password can be fill maximum length is 6.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                      </div>
+                      <input class="form-control" placeholder="Confirm Password" formControlName="confirm_password" type="password" (focus)="focus1=true" (blur)="focus1=false">
+                      
+                      <div *ngIf="submitted && f.password.errors" class="invalid-form-error">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password required minimum length is 4.</div>
+                        <div *ngIf="f.password.errors.maxlength">Password can be fill maximum length is 6.</div>
+                      </div>
+                    </div>
+                  </div>
+                 
+                  <div class="text-center">
+                    <button type="button" class="btn btn-primary my-4" (click)="reset()">Reset Password</button>
+                    
+                  </div>
+                </form>
+              </div>
+            </div>
+                <div class="row mt-3">
+                  <div class="col-6">
+                    <a   href="javascript:void(0)" class="text-light">
+                      <small [routerLink]="['/login']">go to login</small>
+                    </a>
+                  </div>
+                   
+                </div>
+          
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  

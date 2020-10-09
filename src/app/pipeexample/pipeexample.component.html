@@ -1,0 +1,11 @@
+
+<ul>
+    <li *ngFor="let n of array">
+    {{n | underscore}}
+    </li>
+  </ul>
+  <h1>{{data}}</h1>
+  <h1>{{componentPipe}}</h1>
+<input type="number" [(ngModel)]="data">
+<button (click)="submit()">Button</button>
+

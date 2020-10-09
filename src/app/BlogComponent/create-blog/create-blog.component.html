@@ -1,0 +1,38 @@
+<h2 class="text_size"><b>Blogs</b></h2>
+<h2 class="text_size" *ngIf="blogId"><b>Update Blogs</b></h2>
+<h4 class="margin_size"  *ngIf="!blogId"><b>Post a new Entry</b></h4>
+<h4 class="margin_size" *ngIf="blogId"><b>Update Entry</b></h4>
+<p class="margin_size"  *ngIf="!blogId"><b>Fields marked with an asterick(*) are mandatory.</b></p><br><br><br><br>
+
+
+<form [formGroup]="createForm">
+ 
+  <label class="entry_margin" for="title"  id="title">Entry Title:<font color="red"><sup>*</sup></font> </label>
+  <input class="title_size" type="text" formControlName="title" name="title" placeholder="Your entry title"  >
+   
+    <div  *ngIf="submitted && f.title.errors" class="invalid-form-error">
+      <div class="message_margin" *ngIf="f.title.errors.required">Title is required</div>
+      <div class="message_margin" *ngIf="f.title.errors.minlength">Title atleast 5 charecter.</div>
+</div>
+
+  <br><br>
+
+  <label class="entry_margin" for="sort_description" id="sort_description">Sort Description<font color="red">
+      <sup>*</sup></font> </label>
+  <textarea class="sort_size" type="text" formControlName="sort_description" name="sort_description"
+    placeholder="Enter your sort description" autofocus required></textarea>
+  <br><br>
+
+  <label class="entry_margin" for="description" id="description"> Description<font color="red"><sup>*</sup></font>
+  </label>
+  <textarea class="description_size" formControlName="description" type="text" name="description"
+    placeholder="Enter your description" autofocus required></textarea>
+  <br><br>
+
+
+
+  <div class="text-center">
+    <button type="button"  *ngIf="!blogId" class="btn btn-primary mt-4" (click)="blogCreate()">Create account</button>
+    <button type="button" *ngIf="blogId" class="btn btn-primary mt-4" (click)="update()">Update</button>
+  </div>
+</form>

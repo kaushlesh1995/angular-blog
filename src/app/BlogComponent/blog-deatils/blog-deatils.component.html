@@ -1,0 +1,24 @@
+<!-- <nav>
+    <h1>Blog Details Here</h1>
+    <button class="btn btn-success float-right" (click)="logout()" routerLinkActive="router-link-active">Logout</button>
+</nav> -->
+<nav class="navbar navbar-light bg-secondary">
+
+    <!-- <input type="text" style="padding:8px;margin:15px auto;width:30%;"
+      
+        placeholder="Type to filter the name column..." (keyup)="updateFilter($event)" class="filter-data" /> -->
+        <h1>Blog Details Here</h1>
+        <button class="btn btn-success float-right" (click)="logout()" routerLinkActive="router-link-active">Logout</button>
+    </nav>
+<br><br>
+<div class="container">
+    <div *ngIf="blog">
+        <h5>Title : {{blog.title}}</h5>
+        <hr>
+        <p>Sort Description : {{blog.sort_description}}</p>
+        <hr>
+        <p><b> Description :</b>{{blog.description}}</p><br><br>
+        <button (click)="gotoEdit()"  class="float-left" class="btn btn-success btn-lg" >Edit</button>
+        <button (click)="gotoDelete()" class="float-right" class="btn btn-danger ">Delete</button>
+    </div>
+</div>

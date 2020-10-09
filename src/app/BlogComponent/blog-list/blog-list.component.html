@@ -1,0 +1,26 @@
+<nav>
+<h1>All Blogs Here</h1>
+</nav>
+<br><br>
+
+<!-- <ul>
+    <li *ngFor="let c of blogs">
+      {{c}}
+    </li>
+  </ul> -->
+
+<div class="container">
+    <div class="text-center">
+       
+        <div *ngFor="let item of blogs" class="blog_listing">
+            <h5>Title : {{item.title}}</h5>
+            <hr>
+            <p>Sort Description : {{item.sort_description}}</p>
+            <hr>
+            <p><b> Description :</b>{{item.description}}</p><br><br>
+
+            <button (click)="goToDetails(item.id)">Details</button>
+
+        </div>
+    </div>
+</div>     

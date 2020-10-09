@@ -1,0 +1,42 @@
+.text_size{
+    font-size: 41px;
+    margin-left: 49px;
+    margin-top: 27px;
+}
+
+.margin_size{
+    margin-left: 49px;
+}
+.entry_margin{
+    margin-left: 319px;
+}
+.title_size{
+    margin-left: 110px;
+    width: 297px;
+    padding-left: 16px;
+}
+.sort_size{
+    margin-left: 76px;
+    width: 297px;
+    height: 193px;
+    padding-left: 16px;
+}
+.description_size{
+    margin-left: 106px;
+    width: 297px;
+    height: 193px;
+    padding-left: 16px;
+}
+
+.message_margin{
+    margin-left: 504px;
+   
+}
+
+.invalid-form-error {
+    font-size: 80%;
+    width: 100%;
+    margin-top: .25rem;
+    color: #fb6340;
+    padding: 5px 10px;
+}
